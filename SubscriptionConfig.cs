@@ -46,7 +46,7 @@ namespace TgBotCheker
             },
             new()
             {
-                ChannelId   = "wagj23",         // ← заменить на свой
+                ChannelId   = "@wagj23",         // ← заменить на свой
                 DisplayName = "Канал 3",
                 InviteLink  = "https://t.me/wagj23",
             },
