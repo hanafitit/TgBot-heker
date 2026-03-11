@@ -64,7 +64,7 @@ namespace TgBotCheker
         /// Текст после успешной проверки подписки.
         /// </summary>
         public const string WelcomeMessage =
-            "✅ Отлично! Вы подписались на все каналы.\n\n" +
-            "Добро пожаловать! Теперь у вас есть полный доступ.";
+    "✅ Вы прошли проверку!\n\n" +
+    "Вот ваша ссылка: https://t.me/nuvoobshekrutoikanal";
     }
 }
