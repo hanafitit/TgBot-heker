@@ -34,21 +34,21 @@ namespace TgBotCheker
         [
             new()
             {
-                ChannelId   = "@your_channel_1",         // ← заменить на свой
+                ChannelId   = "@zxdfs",         // ← заменить на свой
                 DisplayName = "Канал 1",
-                InviteLink  = "https://t.me/your_channel_1",
+                InviteLink  = "https://t.me/zxdfs",
             },
             new()
             {
-                ChannelId   = "@your_channel_2",         // ← заменить на свой
+                ChannelId   = "@qwd1da",         // ← заменить на свой
                 DisplayName = "Канал 2",
-                InviteLink  = "https://t.me/+Eq4SDuc_uBk0N2Qy",
+                InviteLink  = "https://t.me/qwd1da",
             },
             new()
             {
-                ChannelId   = "@your_channel_3",         // ← заменить на свой
+                ChannelId   = "wagj23",         // ← заменить на свой
                 DisplayName = "Канал 3",
-                InviteLink  = "https://t.me/+vLQ_XNbiMeRlM2Fi",
+                InviteLink  = "https://t.me/wagj23",
             },
 
             // Чтобы добавить ещё канал — скопируйте блок ниже:

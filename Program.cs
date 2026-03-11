@@ -43,6 +43,7 @@ namespace TgBotCheker
                 );
 
                 _ = RunWebServer(cts.Token);
+                _ = RunSelfPing(cts.Token);
 
                 Console.WriteLine("Для остановки нажмите Ctrl+C.");
                 await Task.Delay(Timeout.Infinite, cts.Token);
@@ -98,6 +99,34 @@ namespace TgBotCheker
             }
 
             listener.Stop();
+        }
+        private static async Task RunSelfPing(CancellationToken ct)
+        {
+            var port    = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            var url     = Environment.GetEnvironmentVariable("RENDER_EXTERNAL_URL")
+                          ?? $"http://localhost:{port}";
+            var client  = new System.Net.Http.HttpClient();
+
+            // Ждём пока веб-сервер поднимется
+            await Task.Delay(5_000, ct);
+
+            Console.WriteLine($"Self-ping запущен → {url}");
+
+            while (!ct.IsCancellationRequested)
+            {
+                try
+                {
+                    await client.GetAsync(url, ct);
+                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] [PING] OK");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] [PING] Ошибка: {ex.Message}");
+                }
+
+                // Пинг каждые 10 минут — Render засыпает после 15
+                await Task.Delay(TimeSpan.FromMinutes(10), ct);
+            }
         }
     }
 }
