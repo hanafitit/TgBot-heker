@@ -1,0 +1,10 @@
+curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/VisualStudio.gitignore
+```
+
+Если curl не работает — создайте файл `.gitignore` вручную в папке проекта со следующим содержимым:
+```
+.vs/
+bin/
+obj/
+packages/
+*.user
